@@ -1,8 +1,9 @@
 from tkinter import *
+from tkinter import messagebox
 def nevjegy():
     #Nevjegy ablaka es informaciok benne:
     abl2 = Toplevel(foablak)
-    uzenet2 = Message(abl2, text ="Készítette: Gipsz Jakab\nPiripócs\n2009.06.04", width = 150)
+    uzenet2 = Message(abl2, text ="Készítette: Juhász Gábors\nBácsborsód\n2005.07.11", width = 150)
     gomb2 = Button(abl2,text = "kilép", command=abl2.destroy)
     uzenet2.pack()
     gomb2.pack()
@@ -14,6 +15,12 @@ def  felszin():
         b = eval(mezo2.get())
         c = eval(mezo3.get())
         felszin = 2*(a*b+a*c+b*c)
+        if a == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+        if b == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+        if c == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0")
         mezo4.delete(0,END)
         mezo4.insert(0, str(felszin))
     #Felszin ablaka:
@@ -45,6 +52,12 @@ def terfogat():
         a = eval(mezo1.get())
         b = eval(mezo2.get())
         c = eval(mezo3.get())
+        if a == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+        if b == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+        if c == 0:
+            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0")
         terfogat = a*b*c
         mezo4.delete(0,END)
         mezo4.insert(0, str(terfogat))
@@ -57,6 +70,7 @@ def terfogat():
     sz3 = Label(abl3, text = "c:")
     sz4 = Label(abl3, text ="Eredmény:")
     gomb1 = Button(abl3, text="Számítás", command=szamit)
+    gomb2 = Button(abl3)
     mezo1 = Entry(abl3)
     mezo2 = Entry(abl3)
     mezo3 = Entry(abl3)
