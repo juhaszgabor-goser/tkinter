@@ -1,15 +1,18 @@
 from tkinter import *
 import math
+import abc
 from tkinter import messagebox
 def terfogat():
     def szamit():
         #Terfogat kiszamitasa es adatok bekerese:
-        a = eval(mezo1.get())
-        b = eval(mezo2.get())
+        a = (mezo1.get())
+        b = (mezo2.get())
+        if a.isalpha() or b.isalpha():
+            messagebox.showerror("Nem jó","Nem jó,mivel az egyik adat az betu. Zárja be az ablakot és nyissa meg újra.")
         if a <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel az a adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if b <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         terfogat= round(math.pi*pow(a,2)*b)
         mezo4.delete(0,END)
         mezo4.insert(0, str(terfogat))
@@ -36,13 +39,15 @@ def terfogat():
 def  felszin():
     def szamit():
         #Felszin kiszamitasa es adatok bekerese:
-        a = eval(mezo1.get())
-        b = eval(mezo2.get())
+        a = (mezo1.get())
+        b = (mezo2.get())
+        if a.isalpha() or b.isalpha():
+            messagebox.showerror("Nem jó","Nem jó,mivel az egyik adat az betu. Zárja be az ablakot és nyissa meg újra.")
         felszin = round(2*(a*a)*math.pi+2*a*math.pi*b)
         if a <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel az a adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if b <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         mezo4.delete(0,END)
         mezo4.insert(0, str(felszin))
     #Felszin ablaka:
@@ -68,16 +73,18 @@ def  felszin():
 def  felszin2():
     def szamit():
         #Felszin kiszamitasa es adatok bekerese:
-        a = eval(mezo1.get())
-        b = eval(mezo2.get())
-        c = eval(mezo3.get())
+        a = (mezo1.get())
+        b = (mezo2.get())
+        c = (mezo3.get())
+        if a.isalpha() or b.isalpha() or c.isalpha():
+            messagebox.showerror("Nem jó","Nem jó,mivel az adatok egyike az betu. Zárja be az ablakot és nyissa meg újra.")
         felszin = 2*(a*b+a*c+b*c)
         if a <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if b <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if c <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         mezo4.delete(0,END)
         mezo4.insert(0, str(felszin))
     #Felszin ablaka:
@@ -106,15 +113,17 @@ def  felszin2():
 def terfogat2():
     def szamit():
         #Terfogat kiszamitasa es adatok bekerese:
-        a = eval(mezo1.get())
-        b = eval(mezo2.get())
-        c = eval(mezo3.get())
+        a = (mezo1.get())
+        b = (mezo2.get())
+        c = (mezo3.get())
+        if a.isalpha() or b.isalpha() or c.isalpha:
+            messagebox.showerror("Nem jó","Nem jó,mivel az egyik adat az betu. Zárja be az ablakot és nyissa meg újra.")
         if a <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a a adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel az a adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if b <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a b adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         if c <= 0:
-            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0")
+            messagebox.showerror("Nem jó","Nem jó,mivel a c adat az 0 vagy kisebb.Zárja be az ablakot és nyissa meg újra")
         terfogat = a*b*c
         mezo4.delete(0,END)
         mezo4.insert(0, str(terfogat))
